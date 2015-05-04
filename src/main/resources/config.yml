@@ -1,0 +1,4 @@
+join-check: true
+always-join-check: false
+security-level: 2
+kick-message: You have been detected as using a VPN! Please get off it.

@@ -1,0 +1,24 @@
+name: checkVPN
+main: tk.masonx.checkVPN.CheckVPNPlugin
+version: 1
+commands:
+  vpn:
+    description: Check if a player is using a VPN
+    usage: "You need to specify something to do! Use /vpn help for more information"
+permissions:
+    checkVPN.runCommand:
+        description: Run checkVPN
+        default: false
+    checkVPN.editConfig:
+        description: Edit checkVPN configuration
+        default: false
+    checkVPN.bypassVPNCheck:
+        description: Bypass checkVPN on join
+        default: false
+    checkVPN.admin:
+        description: Gives access to commands
+        default: op
+        children:
+            checkVPN.runCommand: true
+            checkVPN.editConfig: true
+            checkVPN.bypassVPNCheck: true
