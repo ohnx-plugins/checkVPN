@@ -45,11 +45,11 @@ public class CheckVPN {
 	
 	//Main handler
 	public static boolean checkVPN(String ip, CheckVPNConfig config) {
-		boolean isVPN=false;
-		if(config.secLevel>=1)
-			isVPN = checkS(ip)||false;//Add more later
-		if(config.secLevel==2)
-			isVPN = checkGIP(ip)||false;//Add more later
+		//Slightly more efficient code here - if the required security level is set then use or (or will only run until one of them is true)
+		if(config.secLevel>=1&&(checkS(ip)||false))
+			return true;
+		if(config.secLevel==2&&(checkGIP(ip)||false))
+			return true;
 		//Other NYI ones
 		//TODO: Implement these ones
 		/*getipaddr = new URL("http://api.stopforumspam.org/api?ip="+ip);
@@ -63,7 +63,7 @@ public class CheckVPN {
 		while ((inputLine = in.readLine()) != null)
 		    System.out.println(inputLine);
 		in.close();*/
-		return isVPN;
+		return true;
 	}
 
 }
