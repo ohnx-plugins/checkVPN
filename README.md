@@ -1,7 +1,7 @@
 # checkVPN
 Spigot/Bukkit plugin to check if a user is using a VPN
 
-Copied from description [here](http://www.spigotmc.org/resources/checkvpn.6701/)
+Copied from description [here](http://www.spigotmc.org/resources/checkvpn.6701/):
 checkVPN
 ===
 about
