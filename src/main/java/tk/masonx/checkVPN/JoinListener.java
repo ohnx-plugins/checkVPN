@@ -45,8 +45,9 @@ public class JoinListener implements Listener {
     				String UUID = event.getPlayer().getUniqueId().toString();
     				if(checkVPN(event.getPlayer())) {
     					//Delete both the data file and the json file
-    					final File datFile = new File("world\\playerdata\\"+UUID+".dat");
-    					final File jsonFile = new File("world\\stats\\"+UUID+".json");
+    					String name = plugin.getServer().getWorlds().get(0).getName();
+    					final File datFile = new File(name+"\\playerdata\\"+UUID+".dat");
+    					final File jsonFile = new File(name+"\\stats\\"+UUID+".json");
     					new BukkitRunnable() {
     						public void run() {
     							if(!datFile.delete()){
