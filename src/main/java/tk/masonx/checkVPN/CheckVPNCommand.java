@@ -20,7 +20,7 @@ public class CheckVPNCommand implements CommandExecutor {
     		sender.sendMessage(ChatColor.GOLD+"join-check\n"+ChatColor.WHITE+"    Check if a user is using a VPN on join. If set to false, always-join-check will be ignored. \n    Default: "+ChatColor.DARK_RED+"true\n"+ChatColor.WHITE+"    Can be set to true or false."+"\n    Current value: "+ChatColor.DARK_RED+config.joinCheck);
     		break;
     	case "security-level":
-    		sender.sendMessage(ChatColor.GOLD+"security-level\n"+ChatColor.WHITE+"    Change the security level. 1 is simple and basic checking and 2 is slightly slower, but more thorough checking.\n    Default: "+ChatColor.DARK_RED+"2\n"+ChatColor.WHITE+"\n    Can be set to 1 or 2."+"    Current value: "+ChatColor.DARK_RED+config.secLevel);
+    		sender.sendMessage(ChatColor.GOLD+"security-level\n"+ChatColor.WHITE+"    Change the security level. If you have issues with false postives, try turning down the level.\n    Default: "+ChatColor.DARK_RED+"2\n"+ChatColor.WHITE+"\n    Can be set to 1, 2 or 3."+"\n    Current value: "+ChatColor.DARK_RED+config.secLevel);
     		break;
     	case "always-join-check":
     		sender.sendMessage(ChatColor.GOLD+"always-join-check\n"+ChatColor.WHITE+"    Check on every join or just for new players. true will check for every player and false will check for just new players. If join-check is set to false, this value is ignored.\n    Default: "+ChatColor.DARK_RED+"false\n"+ChatColor.WHITE+"    Can be set to true or false."+"\n    Current value: "+ChatColor.DARK_RED+config.alwaysJoinCheck);

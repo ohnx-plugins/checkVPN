@@ -26,6 +26,7 @@ public final class CheckVPNPlugin extends JavaPlugin {
 
         //Register vpn command
         getCommand("vpn").setExecutor(commandHandler);
+        getCommand("vpn").setTabCompleter(new CheckVPNTabCompleter());
         
         //Say loaded!
         pdfFile = this.getDescription();

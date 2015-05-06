@@ -13,12 +13,11 @@ public class CheckVPN {
 			BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
 			String line = in.readLine();
 			in.close();
-			if(line.equals("Y")){
+			if(line.equals("Y"))
 				//VPN detected!
 				return true;
-			} else {
+			else
 				return false;
-			}
 		} catch (Exception e) {
 			Logger.getLogger("CheckVPN").warning("Error checking Shroomery, assuming clean.");
 		}
@@ -86,10 +85,15 @@ public class CheckVPN {
 	
 	//Main handler
 	public static boolean checkVPN(String ip, CheckVPNConfig config) {
+		//Localhost?...
+		if(ip.equals("127.0.0.1"))
+			return false;
 		//Slightly more efficient code here - if the required security level is set then use or (or will only run until one of them is true)
-		if(config.secLevel>=1&&(checkS(ip)||checkSFS(ip)||checkYASB(ip)||false))
+		if(config.secLevel>=1&&(checkS(ip)||checkYASB(ip)||false))
 			return true;
-		if(config.secLevel==2&&(checkGIP(ip)||checkWU(ip)||false))
+		if(config.secLevel>=2&&(checkGIP(ip)||checkWU(ip)||false))
+			return true;
+		if(config.secLevel>=3&&(checkSFS(ip)||false))
 			return true;
 		//Nothing has reported it yet, so return false
 		return false;
